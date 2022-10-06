@@ -1,0 +1,16 @@
+.mainDiv {
+    background-color: grey;
+    text-align: center;
+    margin-top: 225px;
+    margin-left: 35%;
+    width: 30%;
+    height: 400px;
+}
+
+
+
+.heading {
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 15px;
+}
