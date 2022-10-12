@@ -1,16 +1,147 @@
+html { 
+    background: url(Pictures/wp7681749-aesthetic-sky-4k-wallpapers.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  body{
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
 .mainDiv {
-    background-color: grey;
+    background-color: white;
     text-align: center;
-    margin-top: 225px;
+    margin-top: 12%;
     margin-left: 35%;
     width: 30%;
-    height: 400px;
+    height: 365px;
+    border-radius: 15px;
+    min-height: 300px;
+    min-width: 300px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px;
 }
 
 
 
 .heading {
-    font-size: 35px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 15px;
+    font-size: 45px;
+    color: rgb(0, 145, 255);
+    text-shadow: 0px 0px 5px ;
 }
+
+.p1 {
+    margin-top: 8%px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.p2 {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.input {
+    margin-top: 10%;
+    width: 70%;
+    height: 30px;
+    border-radius: 20px;
+    outline: none;
+    border-color: black;
+    padding: 10px;  
+    transition: 0.15s; 
+}
+
+.input:focus {
+    margin-top: 10%;
+    width: 70%;
+    height: 30px;
+    border-radius: 20px;
+    border-style: solid;
+    outline: none;
+    border-color: rgb(52, 150, 255);
+    padding: 10px;
+    transition: 0.15s;
+    box-shadow: 0px 0px 5px 0px;   
+}
+
+.get {
+    width: 15%;
+    height: 55px;
+    font-size: 15px;
+    background-color: rgb(52, 150, 255);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    transition: 0.15s;
+}
+
+.get:hover {
+    width: 15%;
+    height: 55px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(52, 150, 255);
+    border-style: solid;
+    border-color: rgb(52, 150, 255);
+    border-radius: 20px;
+    transition: 0.15s;
+}
+
+.get:active {
+    width: 15%;
+    height: 55px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(52, 150, 255);
+    border-style: solid;
+    border-color: rgb(52, 150, 255);
+    border-radius: 20px;
+    transition: 0.15s;
+    box-shadow: 0px 0px 15px 0px;
+}
+
+
+.lds-hourglass {
+    display: none;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-right: 5%;
+    margin-top: 20%;
+  }
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 0px;
+    box-sizing: border-box;
+    border: 50px solid rgb(52, 150, 255);
+    border-color: rgb(52, 150, 255) transparent rgb(52, 150, 255) transparent;
+    animation: lds-hourglass 1.8s infinite;
+  }
+  @keyframes lds-hourglass {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
+
+  .p3 {
+    display: none;
+    margin-top: 10%;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
