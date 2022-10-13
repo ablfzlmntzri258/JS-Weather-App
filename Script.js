@@ -1,17 +1,76 @@
-const insideDiv = document.querySelectorAll(".heading,.p1,.p2,.input,.get")
-const loaderElements = document.querySelectorAll(".lds-hourglass,.p3")
-
+const firstPageElements = document.querySelectorAll(".heading,.p1,.p2,.input,.get,.note")
+const loaderElements = document.querySelectorAll(".lds-hourglass,.p3,#cancel")
+const input = document.querySelector(".input")
 
 function loader() {
-    for (var i = 0; i < insideDiv.length; i++) {
-        insideDiv[i].style.display = "none"
+    for (let i = 0; i < firstPageElements.length; i++) {
+        firstPageElements[i].style.display = "none"
     }
     loaderElements[0].style.display = "inline-block"
     loaderElements[1].style.display = "block"
+    loaderElements[2].style.display = "block"
+    let resultObject;
+    const req = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=eb3e2db5cff5f470df5ca2d1ba062f70`)
+    req.then((result) => {
+        if(result.ok)
+            return result.text()
+        else
+            console.log("Error: "+result.statusText)
+    })
+        .then((result) => {
+            resultObject = JSON.parse(result)
+            const tempInCelsius = Math.trunc(Number(resultObject.main.temp) - 273);
+            const windSpeedInKM = (Math.round(resultObject.wind.speed * 3.6 * 100) / 100).toFixed(2)
+            document.querySelector(".result").innerHTML =
+                "City Name :  "+resultObject.name+"<br/>"+
+                "Description :  "+resultObject.weather[0].description+"<br/>"+
+                "Temperature :  "+tempInCelsius+" &#8451"+"<br/>"+
+                "Humidity :  "+resultObject.main.humidity+"%"+"<br/>"+
+                "Wind Speed :  "+windSpeedInKM+"m/s"+"<br/>"+
+                "Note : Information are received from <a href='https://openweathermap.org/current'>openweathermap.org</a>"
+
+
+            loaderElements[0].style.display = "none"
+            loaderElements[1].style.display = "none"
+            loaderElements[2].style.display = "none"
+            document.querySelector(".result").style.display = "block"
+            document.getElementById("back").style.display = "block"
+    }).catch((error) => {
+        console.log("Error: "+error)})
 
 }
 
+document.querySelector(".input").addEventListener("keydown",(e) => {
+    if(e.keyCode == 13)
+    {
+        loader()
+    }
+})
 document.querySelector(".get").addEventListener("click",loader)
+
+document.getElementById("cancel").addEventListener("click",() => {
+    loaderElements[0].style.display = "none"
+    loaderElements[1].style.display = "none"
+    loaderElements[2].style.display = "none"
+    firstPageElements[0].style.display = ""
+    firstPageElements[1].style.display = ""
+    firstPageElements[2].style.display = ""
+    firstPageElements[3].style.display = ""
+    firstPageElements[4].style.display = ""
+    firstPageElements[5].style.display = ""
+})
+
+document.getElementById("back").addEventListener("click",() => {
+    document.querySelector(".result").style.display = "none"
+    document.getElementById("back").style.display = "none"
+    firstPageElements[0].style.display = ""
+    firstPageElements[1].style.display = ""
+    firstPageElements[2].style.display = ""
+    firstPageElements[3].style.display = ""
+    firstPageElements[4].style.display = ""
+    firstPageElements[5].style.display = ""
+})
+
 
 
 

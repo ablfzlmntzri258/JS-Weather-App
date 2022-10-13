@@ -16,11 +16,12 @@ html {
     margin-top: 12%;
     margin-left: 35%;
     width: 30%;
-    height: 365px;
+    height: 375px;
     border-radius: 15px;
-    min-height: 300px;
+    min-height: 350px;
     min-width: 300px;
     padding: 20px;
+    padding-top: 5px;
     box-shadow: 0px 0px 10px 0px;
 }
 
@@ -33,7 +34,7 @@ html {
 }
 
 .p1 {
-    margin-top: 8%px;
+    margin-top: 5%;
     font-size: 17px;
     font-weight: bold;
 }
@@ -43,8 +44,20 @@ html {
     font-weight: bold;
 }
 
+.result {
+    margin-top: 7%;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 37px;
+}
+
+.note {
+    font-size: 17px;
+    font-weight: bold;
+}
+
 .input {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 70%;
     height: 30px;
     border-radius: 20px;
@@ -55,7 +68,7 @@ html {
 }
 
 .input:focus {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 70%;
     height: 30px;
     border-radius: 20px;
@@ -110,7 +123,7 @@ html {
     width: 80px;
     height: 80px;
     margin-right: 5%;
-    margin-top: 20%;
+    margin-top: 15%;
   }
   .lds-hourglass:after {
     content: " ";
@@ -144,4 +157,45 @@ html {
     font-size: 17px;
     font-weight: bold;
   }
-  
+
+
+.buttons {
+    display: none;
+    width: 15%;
+    min-width: 75px;
+    height: 55px;
+    font-size: 15px;
+    background-color: rgb(52, 150, 255);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    transition: 0.15s;
+    margin-left: 41.5%;
+    margin-top: 40px;
+}
+
+.buttons:hover {
+    width: 15%;
+    min-width: 75px;
+    height: 55px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(52, 150, 255);
+    border-style: solid;
+    border-color: rgb(52, 150, 255);
+    border-radius: 20px;
+    transition: 0.15s;
+}
+
+.buttons:active {
+    width: 15%;
+    height: 55px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(52, 150, 255);
+    border-style: solid;
+    border-color: rgb(52, 150, 255);
+    border-radius: 20px;
+    transition: 0.15s;
+    box-shadow: 0px 0px 15px 0px;
+}
