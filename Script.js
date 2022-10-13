@@ -14,8 +14,6 @@ function loader() {
     req.then((result) => {
         if(result.ok)
             return result.text()
-        else
-            console.log("Error: "+result.statusText)
     })
         .then((result) => {
             resultObject = JSON.parse(result)
@@ -26,7 +24,7 @@ function loader() {
                 "Description :  "+resultObject.weather[0].description+"<br/>"+
                 "Temperature :  "+tempInCelsius+" &#8451"+"<br/>"+
                 "Humidity :  "+resultObject.main.humidity+"%"+"<br/>"+
-                "Wind Speed :  "+windSpeedInKM+"m/s"+"<br/>"+
+                "Wind Speed :  "+windSpeedInKM+"km/h"+"<br/>"+
                 "Note : Information are received from <a href='https://openweathermap.org/current'>openweathermap.org</a>"
 
 
@@ -34,9 +32,20 @@ function loader() {
             loaderElements[1].style.display = "none"
             loaderElements[2].style.display = "none"
             document.querySelector(".result").style.display = "block"
+            document.querySelector(".result").style.marginTop = ""
             document.getElementById("back").style.display = "block"
-    }).catch((error) => {
-        console.log("Error: "+error)})
+    }).catch(() => {
+        document.querySelector(".result").innerHTML =
+            "Something went wrong!"+"<br/>"+
+            "Double-check your spelling and Internet connection and try again."
+
+        loaderElements[0].style.display = "none"
+        loaderElements[1].style.display = "none"
+        loaderElements[2].style.display = "none"
+        document.querySelector(".result").style.display = "block"
+        document.querySelector(".result").style.marginTop = "25%"
+        document.getElementById("back").style.display = "block"
+    })
 
 }
 
